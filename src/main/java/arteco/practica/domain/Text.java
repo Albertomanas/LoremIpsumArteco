@@ -35,6 +35,19 @@ public class Text {
         return contador;
     }
 
+    //contador de párrafos
+    public static Integer contarParrafos(String lorem) {
+        int contador = 0;
+        String saltoLinea = "\n";
+        while (lorem.indexOf(saltoLinea) > -1) {
+            lorem = lorem.substring(lorem.indexOf(saltoLinea) + saltoLinea.length());
+            contador++;
+        }
+        return contador;
+    }
+
+    //identificar palindromos
+
 
 }
 
