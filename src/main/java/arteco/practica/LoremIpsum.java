@@ -12,6 +12,8 @@ public class LoremIpsum {
 
         System.out.println("5 primeros párrafos: \n" + lorem);
 
-        System.out.println("El texto contiene: " + Text.contarPalabras(lorem) + " palabras.");
+        System.out.println("El texto contiene: " + Text.contarPalabras(lorem) + " palabras." + "\n");
+
+        System.out.println("El texto contiene: " + Text.contarFrases(lorem) + " frases." + "\n");
     }
 }
