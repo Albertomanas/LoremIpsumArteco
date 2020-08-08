@@ -20,8 +20,9 @@ public class Parser {
             Elements lipsums = doc.select("#lipsum p"); // filtro por ID
 
             for(Element lipsum : lipsums) { // Saca cada parrafo
-                loremIpsum += (lipsum.text()).concat("\n");
+                loremIpsum += (lipsum.text().concat("\n"));
             }
+
 
         } catch (IOException e) {
 
