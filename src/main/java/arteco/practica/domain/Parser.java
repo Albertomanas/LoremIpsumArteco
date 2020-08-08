@@ -30,11 +30,4 @@ public class Parser {
         }
         return loremIpsum;
     }
-
-    /*public static String getLorem() {
-        return parseLorem(loremIpsum);
-    }
-
-     */
-
 }
