@@ -10,10 +10,13 @@ public class LoremIpsum {
 
         System.out.println("\n#####" + "\t Operaciones requeridas: \t" + "#####\n");
 
-        System.out.println("5 primeros párrafos: \n" + lorem);
+        System.out.println("5 primeros párrafos: \n\n" + lorem + "\n");
 
         System.out.println("El texto contiene: " + Text.contarPalabras(lorem) + " palabras." + "\n");
 
         System.out.println("El texto contiene: " + Text.contarFrases(lorem) + " frases." + "\n");
+
+        System.out.println("El texto contiene: " + Text.contarParrafos(lorem) + " parrafos." + "\n");
+
     }
 }
