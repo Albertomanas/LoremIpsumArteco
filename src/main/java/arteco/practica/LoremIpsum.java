@@ -8,7 +8,5 @@ public class LoremIpsum {
         System.out.println("\n#####" + "\t Operaciones requeridas: \t" + "#####\n");
 
         System.out.println("5 primeros párrafos: \n" + Parser.parseLorem());
-
-
     }
 }
