@@ -1,6 +1,5 @@
 package arteco.practica.domain;
 
-
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -27,6 +26,7 @@ public class Text {
             contador = 0;
         } else {
             posicion = lorem.indexOf(".");
+            // REVISAR, PUEDE CONTENER EN CASOS ;
             while (posicion != -1) {
                 contador ++;
                 posicion = lorem.indexOf(".", posicion + 1);
@@ -46,8 +46,10 @@ public class Text {
         return contador;
     }
 
-    //identificar palindromos
-
+    //limpiar texto de signos de puntuación
+    public static String quitarSignos(String lorem) {
+        lorem = lorem.replaceAll("[.,:;?!]", "").toLowerCase();
+        return lorem;
+    }
 
 }
-
