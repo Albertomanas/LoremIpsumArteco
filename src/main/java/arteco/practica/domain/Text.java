@@ -1,5 +1,7 @@
 package arteco.practica.domain;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -51,5 +53,33 @@ public class Text {
         lorem = lorem.replaceAll("[.,:;?!]", "").toLowerCase();
         return lorem;
     }
+
+    //Lista de palindromos
+    public static List<String> contarPalindromos(String lorem) {
+        String texto = quitarSignos(lorem);
+        ArrayList<String> filtrarPalindromo = new ArrayList<>();
+        StringTokenizer st = new StringTokenizer(texto);
+        while (st.hasMoreTokens()) {
+            //buscamos palabra por palabra
+            String palabra = st.nextToken();
+            int i = 0;
+            int inc  = 0;
+            int des = palabra.length() - 1;
+            for (i = inc = 0; i <= des; i++) {
+                //letra inicial == final pasa la condición y se almacena
+                if (palabra.charAt(inc) == palabra.charAt(des)) {
+                    inc++;
+                    des--;
+                }
+            }
+            //filtrar para que el palindromo sea > 1
+            int mid = (inc + des)/2;
+            if (i == mid + 1 && mid >= 1) {
+                filtrarPalindromo.add(palabra);
+            }
+        }
+        return filtrarPalindromo;
+    }
+
 
 }
