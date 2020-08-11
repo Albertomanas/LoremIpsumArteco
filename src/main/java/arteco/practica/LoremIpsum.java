@@ -25,7 +25,10 @@ public class LoremIpsum {
 
             System.out.println("El texto contiene: " + Text.contarPalindromos(lorem).size() + " palindromos." + "\n");
 
-            System.out.println("Los cuales son: " + Text.contarPalindromos(lorem)+ "\n");
+            System.out.println("Los cuales son: " + Text.contarPalindromos(lorem) + "\n");
 
+            System.out.println("\n#####" + "\t 5 palabras más frecuentadas en el texto: \t" + "#####\n");
+
+            System.out.println("Las cuales son: " + Text.contarPalabrasRepetidas(lorem) + "\n");
         }
 }
