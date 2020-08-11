@@ -1,9 +1,7 @@
 package arteco.practica.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+
+import java.util.*;
 
 public class Text {
 
@@ -29,7 +27,7 @@ public class Text {
         } else {
             posicion = lorem.indexOf(".");
             // REVISAR, PUEDE CONTENER EN CASOS ;
-            while (posicion != -1) {
+            while (posicion != -1) { //indexOf si no encuentra nada devuelve -1
                 contador ++;
                 posicion = lorem.indexOf(".", posicion + 1);
             }
@@ -81,5 +79,49 @@ public class Text {
         return filtrarPalindromo;
     }
 
+    //Identificar tipos distintos de palabras que aparecen en el texto.
+    public static HashMap<String, Integer> contarPalabrasRepetidas(String lorem) {
+        HashMap<String, Integer> filtrarPalabras = new HashMap<>();
+        String texto = quitarSignos(lorem);
+        StringTokenizer st = new StringTokenizer(texto);
 
+        while (st.hasMoreTokens()){
+            String palabras = st.nextToken();
+            filtrarPalabras.compute(palabras, (palabra, cantidad) -> (cantidad == null) ? 1 : cantidad +1);
+        }
+        return filtrarPalabras;
+    }
+
+    //Sacar las 5 palabras más frecuentadas en el texto.
+    /*public static ArrayList<String> filtroTopCincoPalabras(HashMap filtro) {
+
+        ArrayList filtrarPalabras = new ArrayList<>(filtro.keySet());
+        Collections.sort(filtrarPalabras);
+        return filtrarPalabras;
+    }
+
+     */
+
+    /*public HashMap<String, Integer> filtroTopCincoPalabras(HashMap<String, Integer> filtro) {
+        HashMap<String, Integer> filtrarPalabras = new HashMap<String, Integer>();
+
+        while (filtrarPalabras.isEmpty() && filtrarPalabras.size() < 5) {
+            int contador = 0;
+            for (int valor : filtro.values()) {
+                if (valor > contador) {
+                    contador = valor;
+                }
+            }
+            for (String palabra : filtro.keySet()) {
+                if (filtro.get(palabra) == contador) {
+                    return palabra;
+                }
+            }
+            String freqWord = filtro.keySet();
+            filtrarPalabras.put(freqWord, filtrarPalabras.get(freqWord));
+        }
+        return filtrarPalabras;
+    }
+
+     */
 }
