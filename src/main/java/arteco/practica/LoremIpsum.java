@@ -5,6 +5,8 @@ import arteco.practica.domain.Text;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class LoremIpsum {
         public static void main(String[] args){
@@ -29,6 +31,7 @@ public class LoremIpsum {
 
             System.out.println("\n#####" + "\t 5 palabras más frecuentadas en el texto: \t" + "#####\n");
 
-            System.out.println("Las cuales son: " + Text.contarPalabrasRepetidas(lorem) + "\n");
+            System.out.println("Las cuales son: " + Text.topCincoPalabrasRepetidas(lorem) + "\n");
+
         }
 }
