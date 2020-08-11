@@ -33,5 +33,9 @@ public class LoremIpsum {
 
             System.out.println("Las cuales son: " + Text.topCincoPalabrasRepetidas(lorem) + "\n");
 
+            System.out.println("\n#####" + "\t 5 tuplas más frecuentadas en el texto: \t" + "#####\n");
+
+            System.out.println("Las cuales son: " + Text.topTuplasRepetidas(lorem) + "\n");
+
         }
 }
